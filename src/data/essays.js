@@ -9,6 +9,7 @@ const essays = [
   
   ## Introduction
   
+  Updated again, for the 3rd time!
   Way too fast. AI is advancing at a pace that is hard to keep up with. This essay explores the implications of this rapid advancement and how we can adapt.
   In our fast-paced digital world, design often prioritizes efficiency and engagement metrics over thoughtful user experiences. This essay explores how principles of mindfulness can transform our approach to design.
   
