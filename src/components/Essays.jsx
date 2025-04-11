@@ -213,8 +213,8 @@ The future of work won't be entirely remote or entirely in-person, but rather a 
     >
       <div className="max-w-5xl mx-auto">
         <motion.h1
-          className="text-3xl sm:text-4xl font-bold text-center mb-12"
-          initial={{ y: 20, opacity: 0 }}
+          className="text-3xl sm:text-4xl font-bold text-center mb-12 text-shadow-prpl"
+          initial={{ y: 200, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
@@ -227,10 +227,10 @@ The future of work won't be entirely remote or entirely in-person, but rather a 
               key={essay.id}
               className="glass card cursor-pointer"
               onClick={() => setExpandedEssay(essay)}
-              initial={{ y: 50, opacity: 0 }}
+              initial={{ y: 500, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -5, boxShadow: '0 12px 40px rgba(0, 0, 0, 0.15)' }}
+              transition={{ duration: 0, delay: index * 0.1 }}
+              whileHover={{ y: -15, boxShadow: '0 12px 50px rgba(78, 31, 104, 0.4)', rotateZ: 1.3 }}
             >
               <h2 className="text-xl font-semibold mb-3">{essay.title}</h2>
               <p className="text-gray-600 mb-4">{essay.excerpt}</p>

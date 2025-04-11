@@ -24,6 +24,10 @@ export default {
           '.text-shadow-md': {
             textShadow: '2px 2px 4px rgba(0, 0, 0, 0.4)',
           },
+          
+          '.text-shadow-prpl': {
+            textShadow: '1px 1px 4px rgba(101, 35, 154, 0.3)',
+          },
         })
       }
     ],

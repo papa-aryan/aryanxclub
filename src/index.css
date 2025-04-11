@@ -31,12 +31,12 @@ body {
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 1rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.22);
   transition: all 0.3s ease;
 }
 
 .glass:hover {
-  box-shadow: 0 8px 42px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 42px rgba(0, 0, 0, 0.2);
 }
 
 /* shadcn-like button styles */
@@ -141,4 +141,5 @@ body {
     page-break-inside: avoid;
     margin-bottom: 2rem;
   }
+
 }

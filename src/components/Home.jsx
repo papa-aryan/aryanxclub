@@ -14,13 +14,19 @@ export default function Home({ setCurrentPage }) {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
     >
+
+
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center">
           <motion.h1
             className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-8"
-            initial={{ y: 50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.7 }}
+            initial={{ scale: 0.3, y: -300, opacity: 0 }}
+            animate={{ scale: 1, y: 0, opacity: 1 }}
+            transition={{
+              type: 'spring',
+              stiffness: 500,
+              damping: 20,
+            }}
           >
             <span className="text-shadow-sm">aryan's hub</span>
             
@@ -42,14 +48,14 @@ export default function Home({ setCurrentPage }) {
           <motion.button
             className="flex items-center gap-2 rounded-xl bg-indigo-500 hover:bg-indigo-600 hover:ring-4 ring-purple-300 text-white font-semibold px-8 py-3 text-lg shadow-lg transition-all duration-300"
             initial={{ y: 20, opacity: 0 }}
-            animate={{ y: [0, -20, 0], opacity: 1 }}
+            animate={{ y: [0, -50, 0], opacity: 1 }}
             transition={{
               y: {
                 repeat: Infinity,
                 repeatType: 'loop',
-                duration: 0.6,
+                duration: 0.5,
                 ease: 'easeInOut',
-                repeatDelay: 2.4, // wait 2.4s between loops → 3s total cycle
+                repeatDelay: 1.2, // wait 2s between loops → 3s total cycle
               },
               opacity: { duration: 0.3 },
             }}
