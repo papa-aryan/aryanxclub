@@ -1,8 +1,9 @@
 // src/components/Navbar.jsx
 import React, { useState } from 'react'
+import { NavLink } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 
-export default function Navbar({ currentPage, setCurrentPage }) {
+export default function Navbar() {
   return (
     <motion.nav
       className="fixed w-full bg-indigo-200 bg-opacity-90 backdrop-blur-sm z-50 shadow-sm"
@@ -15,19 +16,16 @@ export default function Navbar({ currentPage, setCurrentPage }) {
           <motion.div
             className="text-xl font-bold cursor-pointer"
             whileHover={{ scale: 1.05 }}
-            onClick={() => setCurrentPage('home')}
           >
-            <span className="text-shadow-sm2">aryan's hub</span>
+            <NavLink to="/">aryan&apos;s hub</NavLink>
           </motion.div>
-
           <div className="hidden md:flex space-x-6">
-            <NavItem title="Home" page="home" currentPage={currentPage} setCurrentPage={setCurrentPage} />
-            <NavItem title="Essays" page="essays" currentPage={currentPage} setCurrentPage={setCurrentPage} />
-            <NavItem title="Random Thoughts" page="thoughts" currentPage={currentPage} setCurrentPage={setCurrentPage} />
+            <NavItem title="Home" to="/" />
+            <NavItem title="Essays" to="/essays" />
+            <NavItem title="Random Thoughts" to="/thoughts" />
           </div>
-
           <div className="md:hidden">
-            <MobileMenu currentPage={currentPage} setCurrentPage={setCurrentPage} />
+            <MobileMenu />
           </div>
         </div>
       </div>
@@ -35,29 +33,30 @@ export default function Navbar({ currentPage, setCurrentPage }) {
   )
 }
 
-// ---------------------
-// NavItem subcomponent
-function NavItem({ title, page, currentPage, setCurrentPage }) {
+function NavItem({ title, to }) {
   return (
-    <motion.div
-      className={`cursor-pointer relative ${currentPage === page ? 'text-blue-600' : 'text-gray-700'}`}
-      onClick={() => setCurrentPage(page)}
-      whileHover={{ scale: 1.05 }}
+    <NavLink
+      to={to}
+      className={({ isActive }) =>
+        `cursor-pointer relative ${isActive ? 'text-blue-600' : 'text-gray-700'}`
+      }
     >
-      {title}
-      {currentPage === page && (
-        <motion.div
-          className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600"
-          layoutId="navIndicator"
-        />
+      {({ isActive }) => (
+        <>
+          {title}
+          {isActive && (
+            <motion.div
+              className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-600"
+              layoutId="navIndicator"
+            />
+          )}
+        </>
       )}
-    </motion.div>
+    </NavLink>
   )
 }
 
-// ---------------------
-// MobileMenu subcomponent
-function MobileMenu({ currentPage, setCurrentPage }) {
+function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
@@ -81,9 +80,9 @@ function MobileMenu({ currentPage, setCurrentPage }) {
             transition={{ duration: 0.2 }}
           >
             <div className="space-y-3">
-              <MenuItem label="Home" page="home" currentPage={currentPage} setCurrentPage={setCurrentPage} setIsOpen={setIsOpen} />
-              <MenuItem label="Essays" page="essays" currentPage={currentPage} setCurrentPage={setCurrentPage} setIsOpen={setIsOpen} />
-              <MenuItem label="Random Thoughts" page="thoughts" currentPage={currentPage} setCurrentPage={setCurrentPage} setIsOpen={setIsOpen} />
+              <MobileMenuItem label="Home" to="/" setIsOpen={setIsOpen} />
+              <MobileMenuItem label="Essays" to="/essays" setIsOpen={setIsOpen} />
+              <MobileMenuItem label="Random Thoughts" to="/thoughts" setIsOpen={setIsOpen} />
             </div>
           </motion.div>
         )}
@@ -92,18 +91,14 @@ function MobileMenu({ currentPage, setCurrentPage }) {
   )
 }
 
-// ---------------------
-// MenuItem subcomponent for MobileMenu
-function MenuItem({ label, page, currentPage, setCurrentPage, setIsOpen }) {
+function MobileMenuItem({ label, to, setIsOpen }) {
   return (
-    <div
-      className={`cursor-pointer ${currentPage === page ? 'text-blue-600' : 'text-gray-700'}`}
-      onClick={() => {
-        setCurrentPage(page)
-        setIsOpen(false)
-      }}
+    <NavLink
+      to={to}
+      className="cursor-pointer text-gray-700"
+      onClick={() => setIsOpen(false)}
     >
       {label}
-    </div>
+    </NavLink>
   )
 }

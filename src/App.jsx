@@ -1,36 +1,27 @@
-// src/App.jsx
-import React, { useState, useEffect, useRef } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { marked } from 'marked'
-
+import React from 'react'
+import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Home from './components/Home'
 import Essays from './components/Essays'
+import EssayPage from './components/EssayPage' // We'll create this in a moment
 import RandomThoughts from './components/RandomThoughts'
-import TypewriterText from './components/TypewriterText' 
 import Footer from './components/Footer'
+import TrailCursor from './components/TrailCursor'; // Import your custom cursor component
+
 
 export default function App() {
-  const [currentPage, setCurrentPage] = useState('home')
-  const [expandedEssay, setExpandedEssay] = useState(null)
-
   return (
     <div className="min-h-screen">
-      <Navbar currentPage={currentPage} setCurrentPage={setCurrentPage} />
+      <TrailCursor /> {/* Mount TrailCursor globally */}
 
-      <AnimatePresence mode="wait">
-        {currentPage === 'home' && (
-          <Home setCurrentPage={setCurrentPage} key="home" />
-        )}
-        {currentPage === 'essays' && (
-          <Essays
-            expandedEssay={expandedEssay}
-            setExpandedEssay={setExpandedEssay}
-            key="essays"
-          />
-        )}
-        {currentPage === 'thoughts' && <RandomThoughts key="thoughts" />}
-      </AnimatePresence>
+      <Navbar />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/essays" element={<Essays />} />
+        <Route path="/essays/:slug" element={<EssayPage />} />
+        <Route path="/thoughts" element={<RandomThoughts />} />
+      </Routes>
 
       <Footer />
     </div>

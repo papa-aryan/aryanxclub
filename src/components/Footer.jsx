@@ -6,7 +6,7 @@ export default function Footer() {
     <footer className="py-8 bg-gray-50 border-t border-gray-200 page-section">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto text-center text-gray-600">
-          <p className="mb-4">© 2023 arydotexe. All rights reserved.</p>
+          <p className="mb-4">why?</p>
           <div className="flex justify-center space-x-6">
             <a href="#" className="text-gray-500 hover:text-gray-800">
               <span className="sr-only">Twitter</span>
