@@ -17,7 +17,7 @@ export default function Navbar({ currentPage, setCurrentPage }) {
             whileHover={{ scale: 1.05 }}
             onClick={() => setCurrentPage('home')}
           >
-            aryan's hub
+            <span className="text-shadow-sm2">aryan's hub</span>
           </motion.div>
 
           <div className="hidden md:flex space-x-6">

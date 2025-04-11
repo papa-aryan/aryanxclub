@@ -143,3 +143,34 @@ body {
   }
 
 }
+
+.tooltip-trigger {
+  position: relative;
+  cursor: pointer;
+  background-color: #f3e8ff;
+  padding: 2px 6px;
+  border-radius: 6px;
+}
+
+.tooltip-box {
+  display: none;
+  position: absolute;
+  top: 2em;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: white;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1px solid #444;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  font-size: 0.85rem;
+  line-height: 1.4;
+  white-space: normal;
+  width: 280px;
+  z-index: 999;
+}
+
+.tooltip-trigger:hover .tooltip-box {
+  display: block;
+}

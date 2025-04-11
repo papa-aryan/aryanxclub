@@ -5,6 +5,7 @@ import { FileText, MessageSquare } from 'lucide-react'
 import TypewriterText from './TypewriterText'
 
 
+
 export default function Home({ setCurrentPage }) {
   return (
     <motion.div
@@ -33,6 +34,7 @@ export default function Home({ setCurrentPage }) {
           </motion.h1>
 
           <motion.div
+          
             className="text-xl text-gray-600 mb-12"
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -48,14 +50,14 @@ export default function Home({ setCurrentPage }) {
           <motion.button
             className="flex items-center gap-2 rounded-xl bg-indigo-500 hover:bg-indigo-600 hover:ring-4 ring-purple-300 text-white font-semibold px-8 py-3 text-lg shadow-lg transition-all duration-300"
             initial={{ y: 20, opacity: 0 }}
-            animate={{ y: [0, -50, 0], opacity: 1 }}
+            animate={{ y: [0, -65, 0], opacity: 1 }}
             transition={{
               y: {
                 repeat: Infinity,
                 repeatType: 'loop',
-                duration: 0.5,
+                duration: 0.3,
                 ease: 'easeInOut',
-                repeatDelay: 1.2, // wait 2s between loops → 3s total cycle
+                repeatDelay: 1, // wait 2s between loops → 3s total cycle
               },
               opacity: { duration: 0.3 },
             }}

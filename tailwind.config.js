@@ -21,6 +21,9 @@ export default {
           '.text-shadow-sm': {
             textShadow: '21px 21px 4px rgba(0, 0, 0, 0.4)',
           },
+          '.text-shadow-sm2': {
+            textShadow: '2px 2px 4px rgba(0, 0, 0, 0.4)',
+          },
           '.text-shadow-md': {
             textShadow: '2px 2px 4px rgba(0, 0, 0, 0.4)',
           },
