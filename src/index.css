@@ -7,32 +7,55 @@
 :root {
   --primary: #3b82f6;
   --primary-hover: #2563eb;
-  --background: #7070cf;
-  --foreground: #1f2937;
-  --card: rgba(255, 255, 255, 0.8);
-  --card-foreground: #1f2937;
-  --border: #e5e7eb;
+  --background: #f0f0f8; /* Light background - Example: Changed from #7070cf */
+  --foreground: #111827; /* Light text - Example: Changed from #1f2937 */
+  --card: rgba(255, 255, 255, 0.8); /* Light card */
+  --card-foreground: #111827; /* Light card text - Example: Changed */
+  --border: #d1d5db; /* Light border - Example: Changed */
   --ring: rgba(59, 130, 246, 0.5);
+  --nav-bg: #f0f0f8; /* Light nav bg (indigo-100 equivalent) */
+  --nav-text: #111827; /* Light nav text - Example: Changed */
+  --footer-bg: #f9fafb; /* Light footer bg (gray-50) */
+  --footer-text: #374151; /* Light footer text (gray-600) - Example: Changed */
+}
+
+.dark {
+  --background: #232126; /* Dark background */
+  --foreground: #e0e0e0; /* Dark text */
+  --card: rgba(40, 40, 60, 0.7); /* Dark card */
+  --card-foreground: #e0e0e0; /* Dark card text */
+  --border: #3a3a5a; /* Dark border */
+  --ring: rgba(99, 102, 241, 0.5); /* Dark ring (indigo-500) */
+  --nav-bg: #232126; /* Dark nav bg */
+  --nav-text: #e0e0e0; /* Dark nav text */
+  --footer-bg: #1d1b1f; /* Dark footer bg */
+  --footer-text: #a0a0b0; /* Dark footer text */
 }
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #0909eeb6; 
-  /* background-color: var(--background); */
-  color: var(--foreground);
+  /* background-color: #0909eeb6; */
+  background-color: var(--background); /* Use CSS variable */
+  color: var(--foreground); /* Use CSS variable */
   margin: 0;
   padding: 0;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Add transition */
 }
 
 /* Glassmorphism effect */
 .glass {
-  background: rgba(255, 255, 255, 0.25);
+  background: var(--card); /* Use CSS variable */
+  color: var(--card-foreground); /* Use CSS variable */
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Adjusted border for dark mode visibility */
   border-radius: 1rem;
   box-shadow: 0 6px 30px rgba(0, 0, 0, 0.22);
   transition: all 0.3s ease;
+}
+
+.dark .glass {
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Keep border subtle in dark mode */
 }
 
 .glass:hover {
@@ -68,26 +91,35 @@ body {
 .btn-outline {
   background-color: transparent;
   border: 1px solid var(--border);
-  color: var(--foreground);
+  color: var(--foreground); /* Use CSS variable */
 }
 
 .btn-outline:hover {
   background-color: rgba(0, 0, 0, 0.05);
 }
 
+.dark .btn-outline:hover {
+  background-color: rgba(255, 255, 255, 0.08); /* Adjust hover for dark */
+}
+
 /* Card styles */
 .card {
   border-radius: 0.75rem;
   padding: 1.5rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease; /* Add transitions */
+  background-color: var(--card); /* Use CSS variable */
+  color: var(--card-foreground); /* Use CSS variable */
 }
 
-/* Markdown styles */
+/* Markdown styles - Let prose plugin handle these */
+/* Remove the following rules: */
+/*
 .markdown h1 {
   font-size: 2.25rem;
   font-weight: 700;
   margin-top: 2rem;
   margin-bottom: 1rem;
+  color: var(--foreground);
 }
 
 .markdown h2 {
@@ -95,6 +127,7 @@ body {
   font-weight: 600;
   margin-top: 1.5rem;
   margin-bottom: 0.75rem;
+  color: var(--foreground);
 }
 
 .markdown h3 {
@@ -102,33 +135,59 @@ body {
   font-weight: 600;
   margin-top: 1.25rem;
   margin-bottom: 0.5rem;
+  color: var(--foreground);
 }
+*/
 
 .markdown p {
   margin-top: 1rem;
   margin-bottom: 1rem;
   line-height: 1.7;
+  /* color: var(--foreground); Let prose handle this */
 }
 
 .markdown code {
   font-family: monospace;
   padding: 0.2rem 0.4rem;
-  background-color: rgba(0, 0, 0, 0.05);
+  /* background-color: rgba(0, 0, 0, 0.05); Let prose handle this */
   border-radius: 0.25rem;
+  /* color: var(--foreground); Let prose handle this */
 }
 
+/* Remove this rule: */
+/*
+.dark .markdown code {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+*/
+
 .markdown pre {
-  background-color: #f3f4f6;
+  /* background-color: #f3f4f6; Let prose handle this */
   padding: 1rem;
   border-radius: 0.5rem;
   overflow-x: auto;
   margin: 1rem 0;
 }
 
+/* Remove this rule: */
+/*
+.dark .markdown pre {
+  background-color: #2d2d44;
+}
+*/
+
 .markdown pre code {
   background: none;
   padding: 0;
+  /* color: #1f2937; Let prose handle this */
 }
+
+/* Remove this rule: */
+/*
+.dark .markdown pre code {
+  color: #e0e0e0;
+}
+*/
 
 /* For PDF export optimization */
 @media print {
@@ -141,15 +200,20 @@ body {
     page-break-inside: avoid;
     margin-bottom: 2rem;
   }
-
 }
 
 .tooltip-trigger {
   position: relative;
   cursor: pointer;
-  background-color: #f3e8ff;
+  background-color: #f3e8ff; /* Light tooltip trigger bg */
+  color: #374151; /* Light tooltip trigger text */
   padding: 2px 6px;
   border-radius: 6px;
+}
+
+.dark .tooltip-trigger {
+  background-color: #4a3a6e; /* Dark tooltip trigger bg */
+  color: #e0e0e0; /* Dark tooltip trigger text */
 }
 
 .tooltip-box {

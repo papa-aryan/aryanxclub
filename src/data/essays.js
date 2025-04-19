@@ -49,59 +49,74 @@ const essays = [
     },
     {
       id: 2,
-      title: "Digital Minimalism",
+      title: "what I like",
       excerpt: "Why less is more in our digital lives, and how to cultivate a more intentional relationship with technology.",
       date: "October 3, 2023",
-      content: `# Digital Minimalism
+      content: `
   
-  ## The Problem of Digital Abundance
-  
-  We live in an age of unprecedented digital abundance. Our devices offer endless streams of content, connections, and capabilities. Yet many of us feel increasingly overwhelmed and distracted.
-  
-  ## What is Digital Minimalism?
-  
-  Digital minimalism is a philosophy that helps us question which digital tools add the most value to our lives. It's about being intentional rather than reactive.
-  
-  ## Core Principles
-  
-  1. **Clutter is costly**
-  2. **Optimization is important**
-  3. **Intentionality is satisfying**
-  
-  ## Practical Steps
-  
-  ### Digital Decluttering
-  
-  Begin with a 30-day break from optional technologies to reset your digital life:
-  
-  \`\`\`javascript
-  function digitalDeclutter() {
-    const optionalTech = identifyOptionalTechnologies();
-    const thirtyDays = 30;
-    
-    for (let day = 1; day <= thirtyDays; day++) {
-      avoidUsing(optionalTech);
-      reflectOn(values);
-    }
-    
-    return newIntentionalTechPractices();
-  }
-  \`\`\`
-  
-  ### Curated Content Consumption
-  
-  Rather than endless scrolling, schedule specific times for digital consumption.
-  
-  ## Benefits of Digital Minimalism
-  
-  - Reclaimed attention
-  - Deeper connections
-  - More meaningful leisure
-  - Reduced anxiety
-  
-  ## Conclusion
-  
-  Digital minimalism doesn't reject technology but puts it in its proper place, serving our values rather than distracting from them.`
+  yesterday, someone asked what I liked to do. 
+
+  I gave a vague, half-baked answer. the kind of answer you cook up at an exam you haven’t studied for.
+
+  so, I wanted to try to define my interests more concretely. (I still dislike summarizing myself though, you’ll notice why.)
+
+  this essay could probably be replaced with the following sentence: _I like doing what I find interesting in that particular moment._
+
+  you can stop reading now.
+
+  unless, you’re really curious…
+
+  I would divide my interests into two main parts:
+
+  **learning** and **creating**.
+
+  ## learning
+
+  people often associate the word learning with school. I find it unfortunate because it leads people astray, and it gives the word a goofy vibe. 
+
+  I like to learn about what interests me. this is not to be confused with learning what I am told I should learn. if you separate the two, I think you will find more joy in learning new things. 
+
+  my interests vary a lot, often depending on my mood. I could be curious about cooking one week and AI agents the next week. I’m not sure how common that is. 
+
+  technology is often the common thread though. if not that, I might find myself exploring nutrition, exercise, philosophy, anatomy, or evolution. I’ve also been enjoying biographies more lately. 
+
+  I think the best entrance to learning is reading. listening and watching work too, but they’re slower. the more I read on my own, the more I enjoy it. I don’t think that’s an accident. learning seems to stick when I apply it, so I try to use whatever I learn. 
+
+  for instance, immortal and genderless animals recently fascinated me (I had no idea such animals exist?!). I spent a couple evening walks discussing the matter with GPT 4o voice mode. it was an unexpectedly pleasant experience lol. to make it stick, I talked about it with my dad. applying knowledge (discussing it in this case) often reveals gaps in what you think you know. 
+
+  I find the key is not rejecting what interests me. I try to keep this top of mind. whatever I am curious about, I want to figure it out on the spot, **before it slips away.** 
+
+  ## creating
+
+  creating is a bit more abstract. I think of it as output, or applied learning. 
+
+  I was **building** Legos at the age of 5, and by 12 I was into editing and **creating** YouTube videos. through uploading videos, I was **creating** a community online. I soon got into coding and **building** small sandbox games and websites. this website, even this essay, is a **creation**. 
+
+  I always liked creating stuff. more importantly nowadays, I want whatever I create to be a natural byproduct of me doing “me”.
+
+  writing is my favourite form of output. there is something oddly pleasant in putting one’s thoughts to paper. coding ranks just below. 
+
+  the more sophisticated version of creating is problem solving. in my opinion, this is the more interesting form. this means creating something *to solve a problem*. 
+
+  interesting problems are tangible. there is no fun in trying to solve climate change or world peace, because it’s almost impossible to know if what you’re doing is working. the feedback loops are too slow. the way to recognize that a problem is tangible is that (a) the effort impacts real people, and (b) it has tight feedback loops. I want to see progress and iterate.
+
+  attempting to solve tangible problems gives me a sense of fulfilment. each step toward the goal, which usually brings a trail of new problems and ideas, is oddly pleasant. 
+
+  ## bonus
+
+  there are a couple niche interests I did not mention/fit above. mainly because they’re not as predominant.
+
+  **health** is one of them. eating healthy and exercising is satisfying to me. it seems like a chore to most people. my family sees it as a tedious task whenever I weigh my food. I suspect I don’t see it as that because there is a tight feedback loop. there’s a clear feedback loop, and I can see my progress each week. it’s fascinating. hehe. < link to sheet
+
+  **food** and **cooking** are also things I enjoy (I am very petty about my diet though lol). cooking and vibing to music is so underrated.
+
+  as you’ve probably noticed, i **think** a lot. sometimes more than I’d like to. I don’t think that’s an interest. feels more like how I’m wired. but, since I’m listing interests that fill my spare time, I might as well include thinking. it’s led to more walks and alone time, which I’ve been prioritizing lately. 
+
+  the **ocean** is another niche interest. I never went on vacation without bringing snorkeling equipment as a kid. watching fish was just *that* important. there was something cozy about their lives, lurking through coral leaves as if they were alleys of their little town.
+
+  what fascinates me nowadays about the ocean is that so much of it is unexplored. yet, inside the tiny explored part we’ve found some crazy species: species that can reverse aging on demand, change gender, or literally clone themselves. and I’m supposed to believe aliens don’t exist?
+
+  the end.`
     },
     {
       id: 1,
@@ -111,7 +126,9 @@ const essays = [
       content: `# The Test Essay
   
   ## The Great Work Transformation
-  
+  <u>Underlined text</u>
+
+  what a [link](https://docs.google.com/document/).
   I told you don't press this essay... Why did you press it?
   
   ## Current State of Remote Work

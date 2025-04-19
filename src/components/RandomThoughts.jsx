@@ -45,7 +45,7 @@ export default function RandomThoughts() {
 
   return (
     <motion.div
-      className="pt-20 pb-12 px-4 sm:px-6 lg:px-8 container mx-auto page-section"
+      className="pt-20 pb-12 px-4 sm:px-6 lg:px-8 container mx-auto page-section min-h-screen" // Added dark background
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -53,7 +53,7 @@ export default function RandomThoughts() {
     >
       <div className="max-w-3xl mx-auto">
         <motion.h1
-          className="text-3xl sm:text-4xl font-bold text-center mb-12"
+          className="text-3xl sm:text-4xl font-bold text-center mb-12 text-gray-900 dark:text-gray-100"
           initial={{ y: 20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}
@@ -72,7 +72,7 @@ export default function RandomThoughts() {
             >
               {/* Using the separate TypewriterText component */}
               <TypewriterText text={thought.content} delay={index} />
-              <p className="text-sm text-gray-500 mt-4">{thought.date}</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400 mt-4">{thought.date}</p>
             </motion.div>
           ))}
         </div>
